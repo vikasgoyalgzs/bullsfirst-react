@@ -39,7 +39,7 @@
     }
 
     .datepicker {
-        background: #fff url(#{$baseImagePath}datepicker-icon.png) no-repeat 95% center;
+        background: #fff url(#{$baseImagePath} + "datepicker-icon.png") no-repeat 95% center;
     }
 
     .sbSelector {
@@ -73,10 +73,10 @@
         float: left;
         height: 25px;
         width: 23px;
-        background-image: url(#{$baseImagePath}unchecked-large.png);
+        background-image: url(#{$baseImagePath} + "unchecked-large.png");
 
         &.checked {
-            background-image: url(#{$baseImagePath}checked-large.png);
+            background-image: url(#{$baseImagePath} + "checked-large.png");
         }
     }
 }

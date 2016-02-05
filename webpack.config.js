@@ -29,13 +29,13 @@ module.exports = {
                 include: path.join(__dirname, 'src'),
                 loader: "react-hot!babel-loader"
             }, {
-                test: /\.scss$/,
-                include: path.join(__dirname, 'src'),
-                loader: "style!css!autoprefixer!compass?sourcemap"
-            }, {
                 test: /\.(png|jpg|jpeg|ttf|eot)$/,
                 include: path.join(__dirname, 'src'),
-                loader: "url?limit=10000"
+                loader: "url-loader?limit=10000"
+            }, {
+                test: /\.scss$/,
+                include: path.join(__dirname, 'src'),
+                loader: "style!css?sourceMap!compass?sourceMap"
             }
         ]
     },

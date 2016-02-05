@@ -36,7 +36,7 @@
         }
 
         .close-button {
-            background: url(#{$baseImagePath}modal-close.png) no-repeat;
+            background: url(#{$baseImagePath} + "modal-close.png") no-repeat;
             float: right;
             height: 17px;
             width: 17px;

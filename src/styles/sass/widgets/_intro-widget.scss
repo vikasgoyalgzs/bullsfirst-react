@@ -23,7 +23,7 @@
     }
 
     p.open-account {
-        background: url(#{$baseImagePath}popsicle.png) no-repeat right center;
+        background: url(#{$baseImagePath} + "popsicle.png") no-repeat right center;
         line-height: 30px;
         margin-top: 18px;
         width: 137px;

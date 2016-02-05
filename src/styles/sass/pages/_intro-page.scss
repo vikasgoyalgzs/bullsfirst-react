@@ -2,7 +2,7 @@
  * intro-page (includes home-page and open-account-page)
  * -------------------------------------------------------------------------- */
 .intro-page {
-    background: $brand-color url(#{$baseImagePath}horns.png) no-repeat right bottom;
+    background: $brand-color url(#{$baseImagePath} + "horns.png") no-repeat right bottom;
     position: relative;
     margin: 10px 10px 0 10px;
 
@@ -12,7 +12,7 @@
         top: 15px;
 
         .logo {
-            background-image: url(#{$baseImagePath}logo.png);
+            background-image: url(#{$baseImagePath} + "logo.png");
             height: 93px;
             width: 194px;
         }
@@ -23,7 +23,7 @@
             text-align: right;
         }
         h1 {
-            background-image: url(#{$baseImagePath}logo.png);
+            background-image: url(#{$baseImagePath} + "logo.png");
             height: 93px;
             margin: 0;
             width: 194px;

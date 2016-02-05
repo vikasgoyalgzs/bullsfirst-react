@@ -18,7 +18,7 @@ class Home extends React.Component {
                     <header>
                         <hgroup>
                             <h1 className="ir logo">Bullsfirst</h1>
-                            <h2>Calling All Bull Market</h2>
+                            <h2>Calling All Bull Markets</h2>
                         </hgroup>
                     </header>
                     <section className="login-section">
