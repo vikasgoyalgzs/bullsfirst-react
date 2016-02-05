@@ -1,36 +1,46 @@
 var path = require('path');
 var webpack = require('webpack');
-
+require('es6-promise').polyfill();
 
 module.exports = {
-    context: path.resolve('src'),
-    entry: "./main.js",
+    entry: [
+        'eventsource-polyfill',
+        'webpack-hot-middleware/client',
+        "./src/main"
+    ],
     output: {
-        path: path.resolve('dist'),
-        filename: "bundle.js"
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.js',
+        publicPath: '/static/'
     },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoErrorsPlugin()
+    ],
     module: {
         preloaders: [{
                 test: /\.jsx?$/,
-                exclude: /node_modules/,
+                include: path.join(__dirname, 'src'),
                 loader: "jshint-loader"
             }
         ],
         loaders: [{
                 test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loader: "babel-loader"
+                include: path.join(__dirname, 'src'),
+                loader: "react-hot!babel-loader"
             }, {
                 test: /\.scss$/,
-                exclude: /node_modules/,
-                loader: "style-loader!css-loader!autoprefixer-loader!sass-loader"
+                include: path.join(__dirname, 'src'),
+                loader: "style!css!autoprefixer!compass?sourcemap"
             }, {
                 test: /\.(png|jpg|jpeg|ttf|eot)$/,
-                exclude: /node_modules/,
-                loader: "url-loader?limit=10000"
+                include: path.join(__dirname, 'src'),
+                loader: "url?limit=10000"
             }
         ]
     },
-    watch : false,
-    devtool: "eval-source-map"
+    resolve : {
+        extensions: ['', '.js', '.jsx']
+    },
+    devtool: "cheap-module-eval-source-map"
 };
